@@ -1,0 +1,3 @@
+# LIME tarafından üretilen HTML raporlarını GitHub dil istatistiklerinden gizle
+results/figures/* linguist-generated=true
+*.html linguist-generated=true

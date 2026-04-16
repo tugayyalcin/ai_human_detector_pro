@@ -1,0 +1,103 @@
+# ==========================================
+# 🧠 YAPAY ZEKA VE DERİN ÖĞRENME ÇEKİRDEĞİ
+# ==========================================
+torch==2.7.1+cu118          # PyTorch motorumuz (Dikkat: +cu118 NVIDIA GPU'ya özel derlemedir)
+torchaudio==2.7.1+cu118     # PyTorch ses eklentisi (Genelde torch ile birlikte gelir)
+torchvision==0.22.1+cu118   # PyTorch görüntü eklentisi 
+transformers==5.5.3         # HuggingFace Transformer modelleri (DistilBERT, RoBERTa vb. için)
+huggingface_hub==1.10.1     # Modelleri HuggingFace sunucularından indirme aracı
+tokenizers==0.22.2          # Metinleri modellere uygun sayılara (token) çeviren hızlandırıcı
+safetensors==0.7.0          # Model ağırlıklarını güvenli ve hızlı yüklemek için format
+sentencepiece==0.2.1        # Gelişmiş metin parçalama (DeBERTa/RoBERTa alt yapısı)
+lime==0.2.0.1               # Explainable AI (Yapay zeka kararlarını açıklayan XAI kütüphanemiz)
+fasttext-wheel==0.9.2       # FastText model mimarimiz için Facebook'un kütüphanesi
+nltk==3.9.4                 # Geleneksel Doğal Dil İşleme (Cümle/Kelime parçalama işlemleri)
+
+# ==========================================
+# 📊 VERİ MANİPÜLASYONU VE MATEMATİK
+# ==========================================
+pandas==3.0.2               # Veri setlerimizi (CSV) okuma ve DataFrame işlemleri
+numpy==2.4.4                # Matris hesaplamaları ve LIME arka plan matematiği
+scikit-learn==1.8.0         # Veri bölme (train_test_split) ve metrik hesaplamaları (F1, Recall vb.)
+scipy==1.17.1               # Bilimsel hesaplamalar (scikit-learn'ün alt bağımlılığı)
+joblib==1.5.3               # Model kaydetme ve paralel işlem yapma kütüphanesi
+
+# ==========================================
+# 🎨 WEB ARAYÜZÜ VE GÖRSELLEŞTİRME
+# ==========================================
+streamlit==1.56.0           # Projenin web arayüzünü (app.py) ayağa kaldıran ana framework
+matplotlib==3.10.8          # Eğitim (Loss/Acc) grafikleri çizimi
+seaborn==0.13.2             # Confusion Matrix ve Bar grafikleri için şık görselleştirme
+altair==6.0.0               # Streamlit'in arka planda kullandığı interaktif grafik motoru
+pydeck==0.9.1               # Streamlit 3D haritalama (varsayılan yüklenir)
+pillow==12.2.0              # Resim işleme kütüphanesi
+scikit-image==0.26.0        # Görüntü işleme araçları
+ImageIO==2.37.3             # Farklı formatlardaki görselleri okuma
+colorama==0.4.6             # Terminal yazılarını renklendirme
+
+# ==========================================
+# 🛠️ YARDIMCI ARAÇLAR VE SİSTEM BAĞIMLILIKLARI
+# ==========================================
+tqdm==4.67.3                # Eğitim sırasında terminalde gördüğümüz ilerleme çubuğu (Progress bar)
+requests==2.33.1            # İnternetten veri çekme işlemleri (GloVe indirme vb.)
+urllib3==2.6.3              # HTTP istekleri motoru
+httpx==0.28.1               # Modern ve hızlı HTTP istekleri
+certifi==2026.2.25          # Güvenli internet bağlantıları için SSL sertifikaları
+PyYAML==6.0.3               # .yaml uzantılı ayar dosyalarını okuma
+toml==0.10.2                # .toml yapılandırma dosyalarını okuma
+click==8.3.2                # Terminalden komut alma (argparse benzeri)
+watchdog==6.0.0             # Streamlit kodunda değişiklik olunca arayüzü anında yenileyen sistem
+GitPython==3.1.46           # Streamlit'in GitHub entegrasyonu için git komutları aracı
+
+# ==========================================
+# ⚙️ ALT BAĞIMLILIKLAR (Ana paketlerin çalışması için gereken arka plan kütüphaneleri)
+# ==========================================
+annotated-doc==0.0.4
+anyio==4.13.0
+attrs==26.1.0
+blinker==1.9.0
+cachetools==7.0.5
+charset-normalizer==3.4.7
+contourpy==1.3.3
+cycler==0.12.1
+filelock==3.25.2
+fonttools==4.62.1
+fsspec==2026.3.0
+gitdb==4.0.12
+h11==0.16.0
+hf-xet==1.4.3
+httpcore==1.0.9
+idna==3.11
+Jinja2==3.1.6
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+kiwisolver==1.5.0
+lazy-loader==0.5
+markdown-it-py==4.0.0
+MarkupSafe==3.0.3
+mdurl==0.1.2
+mpmath==1.3.0
+narwhals==2.19.0
+networkx==3.6.1
+packaging==26.0
+protobuf==7.34.1
+pyarrow==23.0.1
+pybind11==3.0.3
+Pygments==2.20.0
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+referencing==0.37.0
+regex==2026.4.4
+rich==15.0.0
+rpds-py==0.30.0
+shellingham==1.5.4
+six==1.17.0
+smmap==5.0.3
+sympy==1.14.0
+tenacity==9.1.4
+threadpoolctl==3.6.0
+tifffile==2026.3.3
+tornado==6.5.5
+typer==0.24.1
+typing_extensions==4.15.0
+tzdata==2026.1

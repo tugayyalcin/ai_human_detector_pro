@@ -1,0 +1,22 @@
+# Sanal Ortam
+venv/
+env/
+
+# Python Ön Bellek
+__pycache__/
+*.pyc
+
+# VERİ SETİ (1GB olduğu için kesinlikle engellendi)
+data/
+*.csv
+
+# Model Ağırlıkları ve GloVe
+results/saved_models/
+*.pt
+*.txt
+!requirements.txt
+
+# Görsel çıktılar (İstersen yükleyebilirsin ama genelde yerel kalır)
+results/figures/*.png
+results/figures/*.html
+results/figures/*.csv

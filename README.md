@@ -47,10 +47,14 @@ source venv/bin/activate
 ### 3. Install Dependencies
 Install all required libraries using the provided requirements file:
 
+** For macOS / Linux:**
 ```bash
 pip install -r requirements.txt
 ```
-(Note: If your file is named requirements_windows.txt, use that name in the command instead).
+** For Windows / Linux:**
+```bash
+pip install -r requirements_windows.txt
+```
 
 ### 4. Download GloVe Vectors (Required for HAN)
 Download glove.6B.zip from the Official Stanford NLP Group.
@@ -67,16 +71,34 @@ To visualize the dataset statistics and generate graphs:
 python -m src.eda
 ```
 ### Step 2: Training the Model
-Train the GloVe-supported Hierarchical Attention Network. The system will automatically save the best model to results/saved_models/best_han_glove.pt:
+The training pipeline is dynamic and supports multiple architectures. The system will automatically monitor validation accuracy, apply early stopping if necessary, and save the best weights to `results/saved_models/best_[model_name].pt`.
+
+**Available Architecture Choices (`--model`):**
+`fasttext` | `bilstm` | `charcnn` | `han` | `han_glove` | `roberta` | `distilbert`
 
 ```bash
+# 1. Train the highly optimized HAN with GloVe (⭐ Recommended)
 python -m src.train --model han_glove --epochs 5 --lr 2e-4
+
+# 2. Train a standard RNN architecture
+python -m src.train --model bilstm --epochs 5 --lr 2e-4
+
+# 3. Train a Lightweight Transformer architecture
+python -m src.train --model distilbert --epochs 3 --lr 2e-5
 ```
+
 ### Step 3: Evaluating the Model
 Generate performance metrics, confusion matrices, and Explainable AI (LIME) reports on the test data:
 
 ```bash
+# Evaluate the GloVe-supported HAN
 python -m src.evaluate --model han_glove
+
+# Evaluate the BiLSTM model
+python -m src.evaluate --model bilstm
+
+# Evaluate the DistilBERT model
+python -m src.evaluate --model distilbert
 ```
 ### Step 4: Launching the Web Application
 Start the interactive Streamlit dashboard to test the model with your own texts in real-time:

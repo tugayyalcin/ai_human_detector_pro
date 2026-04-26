@@ -49,7 +49,7 @@ Install all required libraries using the provided requirements file:
 
 ** For macOS / Linux:**
 ```bash
-pip install -r requirements.txt
+pip install -r mac_requirements.txt
 ```
 ** For Windows / Linux:**
 ```bash
